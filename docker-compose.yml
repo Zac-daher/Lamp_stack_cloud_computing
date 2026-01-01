@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  flask_web:
+    build: 
+      context: .
+      dockerfile: ./flask.dockerfile
+    ports:
+      - 8888:5000 
+    depends_on:
+      - db
+      - ollama
+    networks:
+      - backend
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: mydatabase
+    volumes: 
+    - ./mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - backend
+  ollama:
+    image: ollama/ollama
+    # build:
+    #   context: .
+    #   dockerfile: ./ollamma.dockerfile
+    ports:
+      - 11434:11434
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - backend
+volumes:
+  ollama_data:
+#chat suggested to add the backend network to the volume. 
+networks:
+  backend:
+
+
+
+#docker compose up and then 

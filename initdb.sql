@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS interactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_prompt TEXT NOT NULL,
+    llm_response TEXT NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
