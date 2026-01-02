@@ -5,7 +5,7 @@ import requests
 
 
 app = Flask(__name__)
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+app.secret_key = 'not showing here'
 
 @app.route("/")
 def index():
@@ -331,20 +331,4 @@ def call_llm():
     </body>
     </html>
     '''
-#Chat GPT assisted me in making the futuristic HTML. 
 
-    # '''
-
-#https://chatgpt.com/share/67fde016-dad8-800e-9110-092cb275b256
-#Chat GPT assisted me in making the futuristic HTML. 
-#changed to POST to match the call_llm function due to chatGPT
-#Chat changed the call_llm model to include an exception handler for the response.
-#Chat Suggested to add the /dbtest route to test the MySQL connection to test the database connection.
-#chat also suggested to add the try/except block to catch any errors that may occur when connecting to the database.
-#chat also explained the connection parameters to me.
-#https://flask.palletsprojects.com/en/stable/quickstart/ is the link I used in structuring the flask server its self. 
-#chat told me to use a secret key for the session to work properly? the secret key is used to sign the session cookie, 
-# #ensuring that the data stored in the session is secure and cannot be tampered with by the client.
-#chatgpt assisted me in explaining that rather than doing ollama/olamma, I should use ollama-with-tinyllama. 
-#This is because Ollama with command, I can use the ollama pull command in build time rather than run time.
-#chat suggested to add the backend network to the volume. 
